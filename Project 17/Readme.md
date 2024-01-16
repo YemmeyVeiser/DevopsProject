@@ -1,14 +1,14 @@
 ##AUTOMATE INFASTRUCTURE WITH TERRAFFORM
 
 I will replicate the below diagram using terraform .
-![Architecture](./Project%2017/Images/Architecture%20Diagram.png)
+![Architecture](./Images/Architecture%20Diagram.png)
 
 The pre-requisite is to establish connectivity to AWS from our local machine by installing and configuring AWS CLI .
 create a programmatic user on AWS called terraform and generate access keys that will be used on our local machine for configuration.
-![terraform user](./Project%2017/Images/terraform_user_creation.png)
+![terraform user](./Images/terraform_user_creation.png)
 
 use ``aws configure`` command to configure aws cli connectivity to the AWS account.
-![aws cli](./Project%2017/Images/aws_configure.png)
+![aws cli](./Images/aws_configure.png)
 
 We will create a folder called PBL, and create a terraform file main.tf. inside the file we will create our resources as shown below.
 
@@ -36,7 +36,7 @@ resource "aws_vpc" "main" {
 now we will download the terraform providers and plugins by running the command ``terraform init``.
 
 we can now run ``terraform plan`` and ``terraform apply`` to create our resources.
-![Vpc](./Project%2017/Images/vpc_creation.png)
+![Vpc](./Images/vpc_creation.png)
 
 We will create the subnets for our architecture. we require 6 subnets according to the diagram.
 2 public subnets for webservers.
@@ -238,7 +238,7 @@ we can make the code more readable and structured by introducing a variables fil
 
 - create a file in the PBL folder and name it ``variables.tf`` 
 - create another file and name it ``variable.tfvars`` this will have the values assigned for all variables declared.
-  ![variable file](./Project%2017/Images/variables_file.png)
+  ![variable file](./Images/variables_file.png)
 
   each configuration file should look like the below.
   ### Main.tf
@@ -341,4 +341,4 @@ variable "enable_classiclink_dns_support" {
 
 Now we can run ``terraform plan`` and then ''terraform apply`` and ensure the resources are created.
 as shown below, our resources were successfully created.
-![Resource creation](./Project%2017/Images/creation_complete.png)
+![Resource creation](./Images/creation_complete.png)
